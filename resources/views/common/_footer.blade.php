@@ -1,7 +1,6 @@
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">
-            由 <a href="#" target="_blank">bigliang</a> 设计和编码 <span style="color: #e27575;font-size: 14px;">❤</span>
-        </p>
+        <span class="text-light"><i class="fa fa-heart text-danger"></i>  by bigliang</span>
+        <span class="text-warning float-right"><i class="fa fa-copyright"></i>  <small>京ICP备*******号</small></span>
     </div>
 </footer>
