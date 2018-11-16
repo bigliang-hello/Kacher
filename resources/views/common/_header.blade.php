@@ -10,15 +10,16 @@
         <!-- Navbar links -->
         <div class="collapse navbar-collapse ml-2" id="collapsibleNavbar">
             <ul class="navbar-nav">
-                <li class="mx-2">
-                    <a class="nav-link active" href="#">全部</a>
+                <li class="mx-2 {{active_class((if_route('topics.index')))}}">
+                    <a class="nav-link " href="{{ route('topics.index') }}">全部</a>
                 </li>
-                <li class="mx-2">
-                    <a class="nav-link" href="#">交流区</a>
-                </li>
-                <li class="mx-2">
-                    <a class="nav-link" href="#">交易区</a>
-                </li>
+
+                @foreach($categories as $category)
+                    <li class="mx-2 {{ active_class((if_route('categories.show') && if_route_param('category', $category->id))) }}">
+                        <a class="nav-link" href="{{route('categories.show', $category->id)}}">{{$category->name}}</a>
+                    </li>
+                @endforeach
+
             </ul>
 
             <ul class="navbar-nav ml-auto">

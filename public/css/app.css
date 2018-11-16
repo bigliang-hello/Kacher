@@ -10491,20 +10491,24 @@ html {
   background-color: #000;
 }
 
-.topics-index-page .topic-list a {
+.topics-index-page .topic-list a,
+.categories-show-page .topic-list a {
   color: #444444;
 }
 
-.topics-index-page .topic-list .meta {
+.topics-index-page .topic-list .meta,
+.categories-show-page .topic-list .meta {
   font-size: 0.9em;
   color: #b3b3b3;
 }
 
-.topics-index-page .topic-list .meta a {
+.topics-index-page .topic-list .meta a,
+.categories-show-page .topic-list .meta a {
   color: #b3b3b3;
 }
 
-.topics-index-page .topic-list hr {
+.topics-index-page .topic-list hr,
+.categories-show-page .topic-list hr {
   margin-top: 12px;
   margin-bottom: 12px;
   border: 0;
