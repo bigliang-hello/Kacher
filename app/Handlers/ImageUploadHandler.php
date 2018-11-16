@@ -6,6 +6,7 @@
  * Time: 下午4:59
  */
 namespace App\Handlers;
+use Intervention\Image\Facades\Image;
 
 class ImageUploadHandler
 {
