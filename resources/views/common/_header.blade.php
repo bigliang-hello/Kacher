@@ -40,6 +40,14 @@
                         </a>
 
                         <ul class="dropdown-menu">
+
+                            <li class="dropdown-item">
+                                <a href="{{ route('users.show', Auth::id()) }}">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    个人中心
+                                </a>
+                            </li>
+
                             <li class="dropdown-item">
                                 <a href="{{ route('users.edit', Auth::id()) }}">
                                     编辑资料
