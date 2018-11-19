@@ -35,7 +35,7 @@
                     <div class="article-meta text-center">
                         {{ $topic->created_at->diffForHumans() }}
                         ⋅
-                        <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                        <span class="fa fa-comment" aria-hidden="true"></span>
                         {{ $topic->reply_count }}
                     </div>
 
@@ -45,11 +45,11 @@
 
                     <div class="operate">
                         <hr>
-                        <a href="{{ route('topics.edit', $topic->id) }}" class="btn btn-default btn-xs" role="button">
-                            <i class="glyphicon glyphicon-edit"></i> 编辑
+                        <a href="{{ route('topics.edit', $topic->id) }}" class="btn btn-default btn-sm" role="button">
+                            <i class="fa fa-pencil-square-o"></i> 编辑
                         </a>
-                        <a href="#" class="btn btn-default btn-xs" role="button">
-                            <i class="glyphicon glyphicon-trash"></i> 删除
+                        <a href="#" class="btn btn-default btn-sm" role="button">
+                            <i class="fa fa-trash-o" ></i> 删除
                         </a>
                     </div>
 

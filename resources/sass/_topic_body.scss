@@ -15,7 +15,7 @@
     margin: 8px 0;
   }
   pre[class*=language-] {
-    margin: 1.2em 0!important;
+    margin: 1.2em 0 !important;
   }
   strong {
     font-weight: bold;
@@ -93,10 +93,10 @@
     margin-bottom: 0;
     overflow: auto;
   }
-  .topic-body>*:first-child {
+  .topic-body > *:first-child {
     margin-top: 0 !important;
   }
-  .topic-body>*:last-child {
+  .topic-body > *:last-child {
     margin-bottom: 0 !important;
   }
   .anchor {
@@ -177,7 +177,7 @@
     margin-top: 0;
     margin-bottom: 0;
   }
-  li>p {
+  li > p {
     margin-top: 6px;
   }
   dl {
@@ -200,14 +200,14 @@
     color: #777;
     border-left: 4px solid #ddd;
   }
-  blockquote>:first-child {
+  blockquote > :first-child {
     margin-top: 20px;
   }
-  blockquote>:last-child {
+  blockquote > :last-child {
     margin-bottom: 20px;
   }
   blockquote {
-    margin: 20px 0!important;
+    margin: 20px 0 !important;
     background-color: #f5f8fc;
     padding: 1rem;
     color: #8796A8;
@@ -264,7 +264,7 @@
     letter-spacing: -0.2em;
     content: "\00a0";
   }
-  pre>code {
+  pre > code {
     padding: 0;
     margin: 0;
     font-size: 100%;
