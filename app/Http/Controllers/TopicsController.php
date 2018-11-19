@@ -29,6 +29,7 @@ class TopicsController extends Controller
 
     public function store(TopicRequest $request, Topic $topic)
     {
+
         $topic->fill($request->all());
         $topic->user_id = Auth::id();
         $topic->save();
@@ -36,7 +37,7 @@ class TopicsController extends Controller
         return redirect()->to($topic->link())->with('message', '成功发布帖子');
     }
 
-    public function show(Topic $topic)
+    public function show(Topic $topic, TopicRequest $request)
     {
         if ( ! empty($topic->slug) && $topic->slug != $request->slug) {
             return redirect($topic->link(), 301);
