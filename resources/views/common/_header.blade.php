@@ -31,9 +31,16 @@
                     <a class="nav-link" href="{{ route('register') }}">注册</a>
                 </li>
                 @else
+                    <li>
+                        <a href="{{ route('notifications.index') }}" class="nav-link  notifications-badge mr-4">
+                            <span class="badge badge-pill badge-{{ Auth::user()->notification_count > 0 ? 'success' : 'secondary' }} " title="消息提醒">
+                                {{ \Illuminate\Support\Facades\Auth::user()->notification_count }}
+                            </span>
+                        </a>
+                    </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <span class="user-avatar pull-left" style="margin-right:8px; margin-top:-5px;">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="user-avatar pull-left">
                                 <img src="{{Auth::user()->avatar}}" class="img-responsive img-circle" width="30px" height="30px">
                             </span>
                             {{ Auth::user()->name }} <span class="caret"></span>
@@ -42,19 +49,19 @@
                         <ul class="dropdown-menu">
 
                             <li class="dropdown-item">
-                                <a href="{{ route('users.show', Auth::id()) }}">
+                                <a href="{{ route('users.show', Auth::id()) }}" class="nav-link ">
                                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                     个人中心
                                 </a>
                             </li>
 
                             <li class="dropdown-item">
-                                <a href="{{ route('users.edit', Auth::id()) }}">
+                                <a href="{{ route('users.edit', Auth::id()) }}" class="nav-link ">
                                     编辑资料
                                 </a>
                             </li>
                             <li class="dropdown-item">
-                                <a class="" href="{{ route('logout') }}"
+                                <a class="nav-link" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                     退出登录

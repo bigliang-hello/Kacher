@@ -30,10 +30,6 @@ html {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-a{
-  color: #444444;
-}
-
 .footer {
   position:absolute;
   bottom:0;
@@ -90,14 +86,14 @@ a{
         color: #b3b3b3;
       }
     }
+  }
 
-    .meta {
-      font-size: .9em;
-      color: #b3b3b3;
-    }
-    .reply-content {
-      margin: 6px 0;
-    }
+  .meta {
+    font-size: .9em;
+    color: #b3b3b3;
+  }
+  .reply-content {
+    margin: 6px 0;
   }
 
   .pagination {
