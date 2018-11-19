@@ -33,11 +33,14 @@ class TopicsController extends Controller
         $topic->user_id = Auth::id();
         $topic->save();
 
-        return redirect()->route('topics.show', $topic->id)->with('message', '成功发布帖子');
+        return redirect()->to($topic->link())->with('message', '成功发布帖子');
     }
 
     public function show(Topic $topic)
     {
+        if ( ! empty($topic->slug) && $topic->slug != $request->slug) {
+            return redirect($topic->link(), 301);
+        }
         return view('topics.show', compact('topic'));
     }
 
