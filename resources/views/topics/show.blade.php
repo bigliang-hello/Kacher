@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 topic-content">
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 topic-content mb-4">
             <div class="card">
                 <div class="card-body">
                     <h1 class="text-center">
@@ -60,6 +60,15 @@
                     @endcan
                 </div>
             </div>
+
+            {{-- 用户回复列表 --}}
+            <div class="card topic-reply">
+                <div class="card-body">
+                    @include('topics._reply_box', ['topic' => $topic])
+                    @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()])
+                </div>
+            </div>
+
         </div>
     </div>
 @stop
