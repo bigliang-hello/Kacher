@@ -42,17 +42,22 @@
                     <div class="topic-body">
                         {!! $topic->body !!}
                     </div>
-
+                    @can('update', $topic)
                     <div class="operate">
                         <hr>
-                        <a href="{{ route('topics.edit', $topic->id) }}" class="btn btn-default btn-sm" role="button">
+                        <a href="{{ route('topics.edit', $topic->id) }}" class="btn btn-default btn-sm float-left" role="button">
                             <i class="fa fa-pencil-square-o"></i> 编辑
                         </a>
-                        <a href="#" class="btn btn-default btn-sm" role="button">
-                            <i class="fa fa-trash-o" ></i> 删除
-                        </a>
-                    </div>
 
+                        <form action="{{ route('topics.destroy', $topic->id) }}" method="post">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                            <button type="submit" class="btn btn-default btn-sm" style="margin-left: 6px; color: #444444;" >
+                                <i class="fa fa-trash-o" ></i> 删除
+                            </button>
+                        </form>
+                    </div>
+                    @endcan
                 </div>
             </div>
         </div>
