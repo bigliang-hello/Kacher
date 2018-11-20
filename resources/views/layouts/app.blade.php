@@ -31,7 +31,9 @@
 
     @include('common._footer')
 </div>
-
+@if (app()->isLocal())
+    @include('sudosu::user-selector')
+@endif
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
 @yield('scripts')

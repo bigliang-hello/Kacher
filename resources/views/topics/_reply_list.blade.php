@@ -15,12 +15,19 @@
                     <span> •  </span>
                     <span class="meta" title="{{ $reply->created_at }}">{{ $reply->created_at->diffForHumans() }}</span>
 
+                    @can('destroy', $reply)
                     {{-- 回复删除按钮 --}}
                     <span class="meta float-right">
-                        <a title="删除回复">
-                        <span class="fa fa-trash-o" aria-hidden="true"></span>
-                        </a>
+                    <form action="{{ route('replies.destroy', $reply->id) }}" method="post" id="reply_list">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <button type="button" class="btn btn-default btn-sm" style="color: #444444;"
+                                onclick="formSubmit()">
+                            <i class="fa fa-trash-o"></i> 删除
+                        </button>
+                    </form>
                     </span>
+                    @endcan
                 </div>
                 <div class="reply-content mt-1">
                     {!! $reply->content !!}
@@ -30,3 +37,9 @@
         <hr>
     @endforeach
 </div>
+
+<script>
+    function formSubmit() {
+        document.getElementById('reply_list').submit();
+    }
+</script>

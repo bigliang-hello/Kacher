@@ -4,12 +4,9 @@ namespace App\Policies;
 
 use App\Models\Topic;
 use App\Models\User;
-use Illuminate\Auth\Access\HandlesAuthorization;
 
-class TopicPolicy
+class TopicPolicy extends Policy
 {
-    use HandlesAuthorization;
-
     public function update(User $user, Topic $topic)
     {
         return $user->isAuthorOf($topic);
@@ -17,6 +14,7 @@ class TopicPolicy
 
     public function destroy(User $user, Topic $topic)
     {
+        dd($topic->user_id);
         return $user->isAuthorOf($topic);
     }
 }

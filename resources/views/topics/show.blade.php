@@ -65,7 +65,7 @@
             <div class="card topic-reply">
                 <div class="card-body">
                     @includeWhen(\Illuminate\Support\Facades\Auth::check(), 'topics._reply_box', ['topic' => $topic])
-                    @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()])
+                    @include('topics._reply_list', ['replies' => $topic->replies()->with('user','topic')->get()])
                 </div>
             </div>
 
