@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
     <div class="container">
         <!-- Brand/logo -->
-        <a class="navbar-brand mr-0 mr-md-2" href="#">Kacher</a>
+        <a class="navbar-brand mr-0 mr-md-2" href="#">
+            <img src="{{asset('img/logo.png')}}" title="Kacher" height="28px">
+        </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
