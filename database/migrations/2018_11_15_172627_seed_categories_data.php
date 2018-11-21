@@ -18,6 +18,10 @@ class SeedCategoriesData extends Migration
                 'description' => '收购',
             ],
             [
+                'name'        => '零配件',
+                'description' => '零配件',
+            ],
+            [
                 'name'        => '交流',
                 'description' => '交流',
             ],

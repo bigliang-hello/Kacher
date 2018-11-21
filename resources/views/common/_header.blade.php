@@ -40,7 +40,7 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <span class="user-avatar pull-left">
+                            <span class="user-avatar mr-2">
                                 <img src="{{Auth::user()->avatar}}" class="img-responsive img-circle" width="30px" height="30px">
                             </span>
                             {{ Auth::user()->name }} <span class="caret"></span>
@@ -50,13 +50,14 @@
 
                             <li class="dropdown-item">
                                 <a href="{{ route('users.show', Auth::id()) }}" class="nav-link ">
-                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    <span class="fa fa-user mr-1" aria-hidden="true"></span>
                                     个人中心
                                 </a>
                             </li>
 
                             <li class="dropdown-item">
                                 <a href="{{ route('users.edit', Auth::id()) }}" class="nav-link ">
+                                    <span class="fa fa-pencil-square mr-1" aria-hidden="true"></span>
                                     编辑资料
                                 </a>
                             </li>
@@ -64,6 +65,7 @@
                                 <a class="nav-link" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
+                                    <span class="fa fa-paper-plane-o mr-1" aria-hidden="true"></span>
                                     退出登录
                                 </a>
 

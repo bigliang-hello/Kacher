@@ -25,6 +25,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('kacher:calculate-active-user')->hourly();
+        $schedule->command('kacher:sync-user-actived-at')->dailyAt('00:00');
     }
 
     /**

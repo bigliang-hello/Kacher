@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Spatie\Permission\Models\Role;
+use Illuminate\Database\Eloquent\Model;
 
 class SeedRolesAndPermissionsData extends Migration
 {
@@ -29,6 +30,7 @@ class SeedRolesAndPermissionsData extends Migration
     {
         // 清除缓存
         app()['cache']->forget('spatie.permission.cache');
+        $tableNames = config('permission.table_names');
         Model::unguard();
         DB::table($tableNames['role_has_permissions'])->delete();
         DB::table($tableNames['model_has_roles'])->delete();
