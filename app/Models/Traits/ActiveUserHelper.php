@@ -47,7 +47,6 @@ trait ActiveUserHelper
     {
         $this->calculateTopicScore();
         $this->calculateReplyScore();
-
         // 数组按照得分排序
         $users = array_sort($this->users, function ($user) {
             return $user['score'];
@@ -73,7 +72,6 @@ trait ActiveUserHelper
                 $active_users->push($user);
             }
         }
-
         // 返回数据
         return $active_users;
     }
