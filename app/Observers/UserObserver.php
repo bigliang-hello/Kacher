@@ -10,7 +10,7 @@ class UserObserver
     {
         // 这样写扩展性更高，只有空的时候才指定默认头像
         if (empty($user->avatar)) {
-            $user->avatar = 'http://kacher.test/img/default.png';
+            $user->avatar = '/img/default.png';
         }
     }
 }
