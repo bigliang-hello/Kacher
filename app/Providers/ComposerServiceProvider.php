@@ -14,8 +14,8 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        $categories = Category::all();
-//        view()->share('categories', $categories);
+        $categories = Category::all();
+        view()->share('categories', $categories);
     }
 
     /**
