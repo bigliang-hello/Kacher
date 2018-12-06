@@ -39,13 +39,13 @@
                         {{ $topic->reply_count }}
                     </div>
 
-                    <div class="topic-body">
+                    <div class="topic-body mt-4">
                         {!! $topic->body !!}
                     </div>
                     @can('update', $topic)
                     <div class="operate">
                         <hr>
-                        <a href="{{ route('topics.edit', $topic->id) }}" class="btn btn-default btn-sm float-left" role="button">
+                        <a href="{{ route('topics.edit', $topic->id) }}" class="btn btn-default btn-sm float-left" role="button" style="color: #333333;">
                             <i class="fa fa-pencil-square-o"></i> 编辑
                         </a>
 
@@ -62,13 +62,14 @@
             </div>
 
             {{-- 用户回复列表 --}}
+            @if(\Illuminate\Support\Facades\Auth::check() || count($topic->replies) > 0)
             <div class="card topic-reply">
                 <div class="card-body">
                     @includeWhen(\Illuminate\Support\Facades\Auth::check(), 'topics._reply_box', ['topic' => $topic])
                     @include('topics._reply_list', ['replies' => $topic->replies()->with('user','topic')->get()])
                 </div>
             </div>
-
+            @endif
         </div>
     </div>
 @stop
